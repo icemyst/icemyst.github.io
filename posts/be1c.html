@@ -1,0 +1,1249 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="referrer" content="no-referrer"><title>Selenium 基本用法 | 冰刻无痕</title><meta name="keywords" content="软件测试"><meta name="author" content="冰梦"><meta name="copyright" content="冰梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Selenium 基本用法"><meta name="application-name" content="Selenium 基本用法"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="Selenium 基本用法"><meta property="og:url" content="https://www.hcer.top/posts/be1c.html"><meta property="og:site_name" content="冰刻无痕"><meta property="og:description" content="关于一些Selenium 的基本用法"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.5/img_58_1668x1000_72_null_normal.jpg"><meta property="article:author" content="冰梦"><meta property="article:tag" content="冰梦,冰梦の博客"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.5/img_58_1668x1000_72_null_normal.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://www.hcer.top/posts/be1c"><link rel="preconnect" href="//npm.elemecdn.com"><link rel="preconnect" href="//npm.onmicrosoft.cn"><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="google-site-verification" content="xxx"><meta name="baidu-site-verification" content="code-xxx"><meta name="msvalidate.01" content="xxx"><link rel="manifest" href="/manifest.json"><meta name="msapplication-TileColor" content="var(--icemyst-main)"><link rel="mask-icon" href="/img/siteicon/apple-touch-icon.png" color="#5bbad5"><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/favicon-16x16.png"><link rel="bookmark" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.css" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://npm.elemecdn.com/swiper@8.4.2/swiper-bundle.min.css" media="print" onload='this.media="all"'><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: {"apiurl":"https://friends.839938.xyz/"},
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: {"appId":"HPIBO1JWBQ","apiKey":"c3a39f2c25e2a4951a684e9ab7be359d","indexName":"hexo","hits":{"per_page":6},"languages":{"input_placeholder":"键入后按下回车搜索！","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离上次更新已经过去","messageNext":"天了，文章内容可能已经过时。若内容或图片失效，请留言反馈（部分素材来自网络）。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE={title:"Selenium 基本用法",isPost:!0,isHome:!1,isHighlightShrink:!1,isToc:!0,postUpdate:"2024-03-15 14:02:18",postMainColor:""}</script><noscript><style>#nav{opacity:1}.justified-gallery img{opacity:1}#post-meta time,#recent-posts time{display:inline!important}</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="冰刻无痕" type="application/atom+xml"></head><body><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-left-bg"><svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><defs><mask id="yin"><rect x="0" y="0" width="100" height="200" fill="white"></rect><circle cx="100" cy="150" r="50" fill="white"></circle><circle cx="100" cy="50" r="50" fill="black"></circle></mask></defs><circle cx="100" cy="100" r="100" fill="white" mask="url(#yin)"></circle><circle cx="100" cy="150" r="20" fill="black"></circle></svg></div><div class="loading-right-bg"><svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><defs><mask id="yang"><rect x="100" y="0" width="100" height="200" fill="white"></rect><circle cx="100" cy="50" r="50" fill="white"></circle><circle cx="100" cy="150" r="50" fill="black"></circle></mask></defs><circle cx="100" cy="100" r="100" fill="black" mask="url(#yang)"></circle><circle cx="100" cy="50" r="20" fill="white"></circle></svg></div><div class="loading-image-dot"></div><div class="loading-font">loading 。。。</div><div id="loading-percentage">0%</div></div><script>const loadingBox = document.getElementById('loading-box');
+const loadingPercentage = document.getElementById('loading-percentage');
+
+if (GLOBAL_CONFIG.preloader.source == "2" || GLOBAL_CONFIG.preloader.source == "3") {
+  let loadingPercentageTimer = setInterval(() => {
+    const progressBar = document.querySelector(".pace-progress");
+    if (!progressBar) return;
+    const currentValue = progressBar.getAttribute("data-progress-text");
+    if (currentValue !== loadingPercentage.textContent) {
+      loadingPercentage.textContent = currentValue;
+      if (currentValue === "100%") {
+        clearInterval(loadingPercentageTimer);
+      }
+    }
+  }, 100);
+}
+
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    loadingBox.classList.add("loaded");
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    loadingBox.classList.remove("loaded");
+  }
+};
+
+window.addEventListener('load', preloader.endLoading);
+
+const LOADING_TIMEOUT = 5000;
+setTimeout(() => preloader.endLoading(), LOADING_TIMEOUT);
+
+if (true) {
+  document.addEventListener('pjax:send', preloader.initLoading);
+  document.addEventListener('pjax:complete', preloader.endLoading);
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"><script async src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://icemyst.github.io/" title="GitHub线路" target="_blank"><img class="back-menu-item-icon" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="/img/favicon.ico" alt="GitHub线路"><span class="back-menu-item-text">GitHub线路</span></a><a class="back-menu-item" href="https://icemyst.netlify.app/" title="Netlify线路" target="_blank"><img class="back-menu-item-icon" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic.imgdb.cn/item/64a45db01ddac507cc22373d.webp" alt="Netlify线路"><span class="back-menu-item-text">Netlify线路</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" href="https://eudav.eu.org/" title="冰梦の网盘" target="_blank"><img class="back-menu-item-icon" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="/img/favicon.ico" alt="冰梦の网盘"><span class="back-menu-item-text">冰梦の网盘</span></a><a class="back-menu-item" href="https://github.com/icemyst" title="GitHub" target="_blank"><img class="back-menu-item-icon" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="/img/icon/github-mark-white.png" alt="GitHub"><span class="back-menu-item-text">GitHub</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">冰刻无痕</div><i class="fas fa-home"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:btf.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child" style="left:-79px"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i> <span>隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-cubes faa-tada"></i> <span>分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i> <span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>统计</span></a><ul class="menus_item_child" style="left:-175px"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="fas fa-link faa-tada"></i> <span>友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="fa-brands fa-artstation faa-tada"></i> <span>朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/charts/"><i class="fas fa-chart-line faa-tada"></i> <span>统计表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i> <span>留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/todolist/"><i class="fa-fw fas fa-table-list faa-tada"></i> <span>清单</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child" style="left:-127px"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=7657374410&amp;server=tencent"><i class="fa-fw fas fa-music faa-tada"></i> <span>音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-fw fa-brands fa-bilibili faa-tada"></i> <span>追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="fa-fw fas fa-images faa-tada"></i> <span>相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/collect/"><i class="fa-fw fas fa-box faa-tada"></i> <span>藏宝阁</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child" style="left:-79px"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-dragon faa-tada"></i> <span>关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="fas fa-lightbulb faa-tada"></i> <span>闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="fas fa-shoe-prints faa-tada"></i> <span>随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="btf.totraveling()" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="fa-fw fas fa-paper-plane"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随便看看 - 随机访问一篇本站文章" href="javascript:void(0);"><i class="fas fa-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索内容 - 搜一搜，省时又省力。" accesskey="s"><i class="fas fa-search"></i> <span>搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="btf.switchDarkMode()"><i class="fas fa-adjust" style="font-size:1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="fas fa-arrow-up"></i><span id="percent" onclick="btf.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="fas fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info" style="background-image:url(https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.5/img_58_1668x1000_72_null_normal.jpg)"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="fas fa-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" tabindex="-1"><span><i class="fas fa-hashtag"></i> 软件测试</span></a></span></div></div><h1 class="post-title">Selenium 基本用法<a class="post-edit-link" href="https://github.com/icemyst/bingm-source/edit/master/source/_posts/Selenium-基本用法.md" title="在 GitHub 上编辑 - Selenium 基本用法" target="_blank"><i class="fas fa-feather-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fas fa-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-08T16:46:31.000Z" title="发表于 2022-12-09 00:46:31">2022-12-09</time><span class="post-meta-separator"></span><i class="fas fa-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-15T06:02:18.903Z" title="更新于 2024-03-15 14:02:18">2024-03-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="fas fa-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">3.6k</span><span class="post-meta-separator"></span><i class="fas fa-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" data-flag-title="Selenium 基本用法"><i class="fas fa-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>使用<code>Selenium</code>我们需要将浏览器渠道添加到环境变量或者绝对路径，前者可以初始化后者需要进行指定。</p><div class="note danger flat"><p><strong>这里用的是Firefox浏览器,可以用Google chrome来执行</strong></p></div><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化浏览器为chrome浏览器</span></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定绝对路径的方式</span></span><br><span class="line">path = <span class="string">r'D:\drivers\chromedriver\chromedriver.exe'</span></span><br><span class="line">browser = webdriver.Firefox(path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic2.zhimg.com/v2-973be9e26fad4692e82f861c85a26c7d_r.jpg"></p><p><strong>这样我们看到的是运行成功的的标志，这里我们可以启动为<code>无界面的浏览器</code></strong></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 无界面的浏览器</span></span><br><span class="line">option = webdriver.ChromeOptions()</span><br><span class="line">option.add_argument(<span class="string">"headless"</span>)</span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问百度首页</span></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com/'</span>)</span><br><span class="line"><span class="comment"># 截图预览</span></span><br><span class="line">browser.get_screenshot_as_file(<span class="string">'截图.png'</span>)</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic1.zhimg.com/v2-45d7410e724b9776323ad436fa030900_r.jpg"></p><p><strong>浏览器对象初始化完成后将其赋值给了<code>browser</code>对象,下面我们可以调用<code>browser</code>来执行各种方法来模拟浏览器的操作了。</strong></p><h2 id="访问页面"><a href="#访问页面" class="headerlink" title="访问页面"></a>访问页面</h2><p>进行访问页面使用的是<code>get</code>方法,传入参数为访问页面的<code>url</code>的地址就可以了,这里我用百度的网址举例。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化浏览器为chrome浏览器</span></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问百度首页</span></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com/'</span>)</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h2 id="设置浏览器大小"><a href="#设置浏览器大小" class="headerlink" title="设置浏览器大小"></a>设置浏览器大小</h2><p><code>set_window_size()</code>方法可以用来设置浏览器大小（就是屏幕的分辨率）,其中<code>maximize_window</code>设置的是全屏浏览。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置浏览器大小：全屏</span></span><br><span class="line">browser.maximize_window()   </span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>) </span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置分辨率 500*500</span></span><br><span class="line">browser.set_window_size(<span class="number">500</span>,<span class="number">500</span>)  </span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置分辨率 1000*800</span></span><br><span class="line">browser.set_window_size(<span class="number">1000</span>,<span class="number">800</span>) </span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><p>动态图太麻烦，你们自己运行看效果</p><h2 id="刷新页面"><a href="#刷新页面" class="headerlink" title="刷新页面"></a>刷新页面</h2><p>刷新页面是我们经常使用在浏览器的操作，页面也是这样用，这里可以用<code>refresh()</code>方法来实现进行浏览器页面刷新。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置浏览器全屏</span></span><br><span class="line">browser.maximize_window()</span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 刷新页面</span></span><br><span class="line">    browser.refresh()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'刷新成功'</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'刷新失败'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><p>同理，动态图太麻烦,自行运行看效果。</p><h2 id="前进后退"><a href="#前进后退" class="headerlink" title="前进后退"></a>前进后退</h2><p>前进后退也是我们访问页面时非常常见的操作，这里我们用<code>forward()</code>方法可以实现前进，<code>back()</code>可以用来实现后退。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置浏览器全屏</span></span><br><span class="line">browser.maximize_window()</span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开淘宝页面</span></span><br><span class="line">browser.get(<span class="string">r'https://www.taobao.com'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 后退</span></span><br><span class="line">browser.back()</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 前进</span></span><br><span class="line">browser.forward()</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h2 id="获取页面基础属性"><a href="#获取页面基础属性" class="headerlink" title="获取页面基础属性"></a>获取页面基础属性</h2><p>我们在使用<code>selenium</code>打开某个浏览器页面时，我们会获取一些基础属性如网页标题、网址、浏览器名称、页面源码等信息。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 网页标题</span></span><br><span class="line"><span class="built_in">print</span>(browser.title)</span><br><span class="line"><span class="comment"># 当前网址</span></span><br><span class="line"><span class="built_in">print</span>(browser.current_url)</span><br><span class="line"><span class="comment"># 浏览器名称</span></span><br><span class="line"><span class="built_in">print</span>(browser.name)</span><br><span class="line"><span class="comment"># 网页源码</span></span><br><span class="line"><span class="built_in">print</span>(browser.page_source)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 退出浏览器</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></tbody></table></figure><p>效果如下：</p><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic.imgdb.cn/item/639221bab1fccdcd36a1ea7d.png"></p><div class="note danger flat"><p>我们需要注意的是，这里的页面源码用的是<code>正则表达式</code>、<code>Bs4</code>、<code>xpath</code>以及<code>pyquery</code>等工具进行解析提取想要的信息了。</p></div><h2 id="页面元素定位"><a href="#页面元素定位" class="headerlink" title="页面元素定位"></a>页面元素定位</h2><p>我们在实际使用浏览器的时候，很重要的操作有输入文本，点击确定等元素操作，<code>Selenium</code>提供了一系列的方法来方便实现以上的操作，常见的有<code>8</code>种操作定位元素的操作方式，我们来一一演示一下。</p><p>我们以百度首页的搜索框节点操作为例子，搜索<strong>python</strong></p><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic.imgdb.cn/item/639224d6b1fccdcd36a4c370.png"></p><p>搜索框的<code>html</code>结构：</p><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"kw"</span> <span class="attr">name</span>=<span class="string">"wd"</span> <span class="attr">class</span>=<span class="string">"s_ipt"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">maxlength</span>=<span class="string">"255"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure><h2 id="id定位"><a href="#id定位" class="headerlink" title="id定位"></a>id定位</h2><p><code>find_element_by_id()</code>根据<code>id</code>属性获取，这里<code>id</code>属性是<code>kw</code>，我们用以下的代码实现浏览器搜索操作。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在搜索框输入 python</span></span><br><span class="line">browser.find_element_by_id(<span class="string">'kw'</span>).send_keys(<span class="string">'python'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h2 id="class-定位"><a href="#class-定位" class="headerlink" title="class 定位"></a>class 定位</h2><p><code>find_element_by_class_name()</code>根据<code>class</code>属性获取，这里<code>class</code>属性是<code>s_ipt</code>。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在搜索框输入 python</span></span><br><span class="line">browser.find_element_by_class_name(<span class="string">'s_ipt'</span>).send_keys(<span class="string">'python'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h2 id="tag-定位"><a href="#tag-定位" class="headerlink" title="tag 定位"></a>tag 定位</h2><p>我们学过<code>HTML</code>的都知道<code>HTML</code>是用<code>tag</code>来定义功能的，比如<code>input</code>是输入，<code>table</code>是表格等，每个元素其实就是一个<code>tag</code>，一个<code>tag</code>往往用来定义一类功能，我们查看百度首页<code>HTML</code>代码，可以看到很多<code>tag</code>，所以其实很难去区分不同的元素（这个方式很不适用）。</p><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find_element_by_tag_name()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在搜索框输入 python</span></span><br><span class="line">browser.find_element_by_tag_name(<span class="string">'input'</span>).send_keys(<span class="string">'python'</span>)</span><br><span class="line"><span class="comment"># 强制等待</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><div class="note danger flat"><p>使用<code>HTML</code>的很容易报错，基本上不怎么用<code>HTML</code>方式来定位。</p></div><h2 id="link-定位"><a href="#link-定位" class="headerlink" title="link 定位"></a>link 定位</h2><p>这个方式顾名思义就是用定位网络链接的，比如百度首页上方的分类模块链接。</p><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find_element_by_link_text()</span><br></pre></td></tr></tbody></table></figure><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic2.zhimg.com/v2-17a377e7d14b81ed292e2a5e75d9e051_r.jpg"></p><p>以贴吧为例</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 点击贴吧 链接</span></span><br><span class="line">browser.find_element_by_link_text(<span class="string">'贴吧'</span>).click()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器全部页面</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></tbody></table></figure><h2 id="partial-定位"><a href="#partial-定位" class="headerlink" title="partial 定位"></a>partial 定位</h2><p>有时候有的超链接的文本很长，我们如果全部输入，是很麻烦的，又显得代码很不美观，这个时候我们就可以截取一部分字符串，用这种方法进行模糊匹配。</p><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find_element_by_partial_link_text()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 点击新闻 链接</span></span><br><span class="line">browser.find_element_by_partial_link_text(<span class="string">'闻'</span>).click()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器全部页面</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></tbody></table></figure><h2 id="xpath-定位"><a href="#xpath-定位" class="headerlink" title="xpath 定位"></a>xpath 定位</h2><p>前面介绍的几种定位方式都是在理想的状态才可以使用的，有一定的限制，那就是：在当前页面中，每个元素都是<strong>唯一性</strong>的<code>id</code>、<code>name</code>、<code>class</code>或<code>超文本链接</code>的属性，那么我们就可以用这个<strong>唯一性</strong>来定位它们。</p><p>但是在实际工作中并非由怎么美好的方式，那么这个时候我们只能通过<code>xpath</code>（推荐）或者<code>css</code>来定位了。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find_element_by_xpath()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在搜索框输入 python</span></span><br><span class="line">browser.find_element_by_xpath(<span class="string">"//*[@id='kw']"</span>).send_keys(<span class="string">'python'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h2 id="css-定位"><a href="#css-定位" class="headerlink" title="css 定位"></a>css 定位</h2><p>这个方法相对<code>xpath</code>要简洁一些，定位速度也要快一些。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find_element_by_css_selector()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在搜索框输入 python</span></span><br><span class="line">browser.find_element_by_css_selector(<span class="string">'#kw'</span>).send_keys(<span class="string">'python'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()<span class="comment"># 使用前先导入By类</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By<span class="comment"># 使用前先导入By类</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br></pre></td></tr></tbody></table></figure><h2 id="find-element的By定位"><a href="#find-element的By定位" class="headerlink" title="find_element的By定位"></a>find_element的By定位</h2><p>除了上述的<code>8</code>种定位方法，<code>Selenium</code>还提供了一个通用的方法<code>find_element()</code>，这个方法有两个参数：定位方式和定位值。</p><div class="note danger flat"><p>使用前先导入By类from selenium.webdriver.common.by import By</p></div><p>以上的操作可以等于以下的操作：</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">browser.find_element(By.ID,<span class="string">'kw'</span>)</span><br><span class="line">browser.find_element(By.NAME,<span class="string">'wd'</span>)</span><br><span class="line">browser.find_element(By.CLASS_NAME,<span class="string">'s_ipt'</span>)</span><br><span class="line">browser.find_element(By.TAG_NAME,<span class="string">'input'</span>)</span><br><span class="line">browser.find_element(By.LINK_TEXT,<span class="string">'贴吧'</span>)</span><br><span class="line">browser.find_element(By.PARTIAL_LINK_TEXT,<span class="string">'贴吧'</span>)</span><br><span class="line">browser.find_element(By.XPATH,<span class="string">'//*[@id="kw"]'</span>)</span><br><span class="line">browser.find_element(By.CSS_SELECTOR,<span class="string">'#kw'</span>)</span><br></pre></td></tr></tbody></table></figure><h2 id="多个元素"><a href="#多个元素" class="headerlink" title="多个元素"></a>多个元素</h2><p>如果我们定位的目标元素不止一个，那么则需要用到<code>find_elements</code>，得到的结果会是以列表形式。简单的说，就是<code>element</code>后面多了复数<code>s</code>,其它的操作一致。</p><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic.imgdb.cn/item/63922dd6b1fccdcd36af5b4e.png"></p><h2 id="获取页面元素属性"><a href="#获取页面元素属性" class="headerlink" title="获取页面元素属性"></a>获取页面元素属性</h2><div class="note info modern"><p>下面的是进阶教程</p></div><p><strong>get_attribute</strong>获取属性</p><p>既然我们有很多方式来定位页面的元素，那么接下来就可考虑获取以下元素的属性了，尤其是用<code>Selenium</code>进行<strong>网络爬虫</strong>的时候。</p><p>以百度首页的logo为例，获取logo相关属性</p><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic4.zhimg.com/v2-78a0ef8e33f7749b7fe62735ce04ca8b_r.jpg"></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img hidefocus=<span class="string">"true"</span> <span class="built_in">id</span>=<span class="string">"s_lg_img"</span> <span class="keyword">class</span>=<span class="string">"index-logo-src"</span> src=<span class="string">"//www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"</span> width=<span class="string">"270"</span> height=<span class="string">"129"</span> onerror=<span class="string">"this.src='//www.baidu.com/img/flexible/logo/pc/index.png';this.onerror=null;"</span> usemap=<span class="string">"#mp"</span>&gt;</span><br></pre></td></tr></tbody></table></figure><h3 id="获取logo的图片地址"><a href="#获取logo的图片地址" class="headerlink" title="获取logo的图片地址"></a>获取logo的图片地址</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line"></span><br><span class="line">logo = browser.find_element_by_class_name(<span class="string">'index-logo-src'</span>)</span><br><span class="line"><span class="built_in">print</span>(logo)</span><br><span class="line"><span class="built_in">print</span>(logo.get_attribute(<span class="string">'src'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><p>输出结果：</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session=<span class="string">"3da58d3e-aa4d-4643-9a34-f34ed443f0f8"</span>, element=<span class="string">"94b84f87-3dca-4891-bc67-e1103fdad33e"</span>)&gt;</span><br><span class="line">https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png</span><br></pre></td></tr></tbody></table></figure><h3 id="获取文本"><a href="#获取文本" class="headerlink" title="获取文本"></a>获取文本</h3><p>以热榜为例，获取文本和链接</p><p><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://pic1.zhimg.com/v2-e9583c08b855245e38571e645a888fec_r.jpg"></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a <span class="keyword">class</span>=<span class="string">"title-content tag-width c-link c-font-medium c-line-clamp1"</span> href=<span class="string">"https://www.baidu.com/s?cl=3&amp;amp;tn=baidutop10&amp;amp;fr=top1000&amp;amp;wd=%E5%90%84%E5%9C%B0%E8%B4%AF%E5%BD%BB%E5%8D%81%E4%B9%9D%E5%B1%8A%E5%85%AD%E4%B8%AD%E5%85%A8%E4%BC%9A%E7%B2%BE%E7%A5%9E%E7%BA%AA%E5%AE%9E&amp;amp;rsv_idx=2&amp;amp;rsv_dl=fyb_n_homepage&amp;amp;sa=fyb_n_homepage&amp;amp;hisfilter=1"</span> target=<span class="string">"_blank"</span>&gt;&lt;span <span class="keyword">class</span>=<span class="string">"title-content-index c-index-single c-index-single-hot1"</span>&gt;<span class="number">1</span>&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"title-content-title"</span>&gt;各地贯彻十九届六中全会精神纪实&lt;/span&gt;&lt;/a&gt;</span><br></pre></td></tr></tbody></table></figure><p>获取热榜的<strong>文本</strong>，用的是<code>text</code>属性，直接调用即可。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line"></span><br><span class="line">logo = browser.find_element_by_css_selector(<span class="string">'#hotsearch-content-wrapper &gt; li:nth-child(1) &gt; a'</span>)</span><br><span class="line"><span class="built_in">print</span>(logo.text)</span><br><span class="line"><span class="built_in">print</span>(logo.get_attribute(<span class="string">'href'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><p>输出结果：</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>各地贯彻十九届六中全会精神纪实</span><br><span class="line">https://www.baidu.com/s?cl=<span class="number">3</span>&amp;tn=baidutop10&amp;fr=top1000&amp;wd=%E5%<span class="number">90</span>%<span class="number">84</span>%E5%9C%B0%E8%B4%AF%E5%BD%BB%E5%8D%<span class="number">81</span>%E4%B9%9D%E5%B1%8A%E5%<span class="number">85</span>%AD%E4%B8%AD%E5%<span class="number">85</span>%A8%E4%BC%9A%E7%B2%BE%E7%A5%9E%E7%BA%AA%E5%AE%9E&amp;rsv_idx=<span class="number">2</span>&amp;rsv_dl=fyb_n_homepage&amp;sa=fyb_n_homepage&amp;hisfilter=<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure><h3 id="获取其他属性"><a href="#获取其他属性" class="headerlink" title="获取其他属性"></a>获取其他属性</h3><p>除了属性和文本值外，还有id、位置、标签名和大小等属性。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line"></span><br><span class="line">logo = browser.find_element_by_class_name(<span class="string">'index-logo-src'</span>)</span><br><span class="line"><span class="built_in">print</span>(logo.<span class="built_in">id</span>)</span><br><span class="line"><span class="built_in">print</span>(logo.location)</span><br><span class="line"><span class="built_in">print</span>(logo.tag_name)</span><br><span class="line"><span class="built_in">print</span>(logo.size)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><p>输出结果：</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">6af39c9b-<span class="number">70e8</span>-<span class="number">4033</span>-8a74-7201ae09d540</span><br><span class="line">{<span class="string">'x'</span>: <span class="number">490</span>, <span class="string">'y'</span>: <span class="number">46</span>}</span><br><span class="line">img</span><br><span class="line">{<span class="string">'height'</span>: <span class="number">129</span>, <span class="string">'width'</span>: <span class="number">270</span>}</span><br></pre></td></tr></tbody></table></figure><h3 id="页面交互操作"><a href="#页面交互操作" class="headerlink" title="页面交互操作"></a>页面交互操作</h3><p>页面交互就是在浏览器的各种操作，比如上面演示过的输入文本，点击链接等等，还有像清除文本、回车确认，单选框与多选框中等。</p><h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><p>上面有同样的操作</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">send_keys()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定位搜索框</span></span><br><span class="line"><span class="built_in">input</span> = browser.find_element_by_class_name(<span class="string">'s_ipt'</span>)</span><br><span class="line"><span class="comment"># 输入python</span></span><br><span class="line"><span class="built_in">input</span>.send_keys(<span class="string">'python'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h3 id="点击"><a href="#点击" class="headerlink" title="点击"></a>点击</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">click()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选中新闻按钮</span></span><br><span class="line">click = browser.find_element_by_link_text(<span class="string">'新闻'</span>)</span><br><span class="line"><span class="comment"># 点击之</span></span><br><span class="line">click.click()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器全部页面</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></tbody></table></figure><h3 id="清除文本"><a href="#清除文本" class="headerlink" title="清除文本"></a>清除文本</h3><p>既然有输入，就有清除的操作</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定位搜索框</span></span><br><span class="line"><span class="built_in">input</span> = browser.find_element_by_class_name(<span class="string">'s_ipt'</span>)</span><br><span class="line"><span class="comment"># 输入python</span></span><br><span class="line"><span class="built_in">input</span>.send_keys(<span class="string">'python'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 清除python</span></span><br><span class="line"><span class="built_in">input</span>.clear()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h3 id="回车确认"><a href="#回车确认" class="headerlink" title="回车确认"></a>回车确认</h3><p>如我们在搜索框输入文本<code>python</code>，然后回车就可以查询操作结果的情况</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">submit()</span><br></pre></td></tr></tbody></table></figure><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)  </span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定位搜索框</span></span><br><span class="line"><span class="built_in">input</span> = browser.find_element_by_class_name(<span class="string">'s_ipt'</span>)</span><br><span class="line"><span class="comment"># 输入python</span></span><br><span class="line"><span class="built_in">input</span>.send_keys(<span class="string">'python'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 回车查询</span></span><br><span class="line"><span class="built_in">input</span>.submit()</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h3 id="单选"><a href="#单选" class="headerlink" title="单选"></a>单选</h3><p>我们先定位需要的元素，然后点击一下就可以了（再定位一个元素在后面加上<code>.send_keys</code>）。</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(<span class="string">r'https://www.baidu.com'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在搜索框输入 python</span></span><br><span class="line">browser.find_element_by_xpath(<span class="string">"//*[@id='kw']"</span>).send_keys(<span class="string">'python'</span>)</span><br><span class="line">browser.find_element_by_xpath(<span class="string">'//*[@id="su"]'</span>).click()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><h3 id="多选"><a href="#多选" class="headerlink" title="多选"></a>多选</h3><p>这里我们需要导入<code>from selenium.webdriver.support.ui import Select</code></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select.select_by_visible_text()</span><br><span class="line"></span><br><span class="line">select.select_by_value()</span><br><span class="line"></span><br><span class="line">select.select_by_index()</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><h3 id="下拉框"><a href="#下拉框" class="headerlink" title="下拉框"></a>下拉框</h3><p>同样需要<code>Select</code>模块</p><p>先导入类</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver.support.select <span class="keyword">import</span> Select</span><br></pre></td></tr></tbody></table></figure><p>在<code>select</code>模块中有以下定位方法</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、三种选择某一选项项的方法</span></span><br><span class="line"></span><br><span class="line">select_by_index()           <span class="comment"># 通过索引定位；注意：&gt;index索引是从“0”开始。</span></span><br><span class="line">select_by_value()           <span class="comment"># 通过value值定位，va&gt;lue标签的属性值。</span></span><br><span class="line">select_by_visible_text()    <span class="comment"># 通过文本值定位，即显&gt;示在下拉框的值。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、三种返回options信息的方法</span></span><br><span class="line"></span><br><span class="line">voptions                     <span class="comment"># 返回select元素所有&gt;的options</span></span><br><span class="line">all_selected_options        <span class="comment"># 返回select元素中所&gt;有已选中的选项</span></span><br><span class="line">first_selected_options      <span class="comment"># 返回select元素中选&gt;中的第一个选项</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3、四种取消选中项的方法</span></span><br><span class="line"></span><br><span class="line">deselect_all                <span class="comment"># 取消全部的已选择项</span></span><br><span class="line">deselect_by_index           <span class="comment"># 取消已选中的索引项</span></span><br><span class="line">deselect_by_value           <span class="comment"># 取消已选中的value值</span></span><br><span class="line">deselect_by_visible_text    <span class="comment"># 取消已选中的文本值</span></span><br></pre></td></tr></tbody></table></figure><p>我们进行一波操作，暂时找不到合适的网页，我们就用一个简单的本地网页进行测试（这里我们用html文件进行测试）</p><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"ceshi"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"小明"</span> <span class="attr">selected</span>=<span class="string">""</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"小华"</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"小草"</span>&gt;</span>小草<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">然后，再演示下拉框的不同选择方式</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.support.select import Select</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">url = 'file:///C:/Users/Gdc/Desktop/ceshi.html'</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.get(url)</span><br><span class="line">time.sleep(2)</span><br><span class="line"></span><br><span class="line"># 根据索引选择</span><br><span class="line">Select(browser.find_element_by_name("ceshi")).select_by_index("2")</span><br><span class="line">time.sleep(2)</span><br><span class="line"># 根据value值选择</span><br><span class="line">Select(browser.find_element_by_name("ceshi")).select_by_value("小草")</span><br><span class="line">time.sleep(2)</span><br><span class="line"># 根据文本值选择</span><br><span class="line">Select(browser.find_element_by_name("ceshi")).select_by_visible_text("小明")</span><br><span class="line">time.sleep(2)</span><br><span class="line"></span><br><span class="line"># 关闭浏览器</span><br><span class="line">browser.close()</span><br></pre></td></tr></tbody></table></figure><div class="note orange no-icon flat"><p>效果自行运行查看效果</p></div><h3 id="多窗口切换"><a href="#多窗口切换" class="headerlink" title="多窗口切换"></a>多窗口切换</h3><div class="note green icon-padding flat"><i class="note-icon fab fa-internet-explorer"></i><p>比如同一个页面的不同子页面的节点元素获取操作，不同选项卡之间的切换以及不同浏览器窗口之间的切换操作等等。</p></div></article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="btf.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="fas fa-handshake"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/img/wechat.webp" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="/img/wechat.webp" alt="微信"></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.webp" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="/img/alipay.webp" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="btf.removeRewardMask()" style="display:none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="fas fa-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.hcer.top/posts/be1c.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=https://www.hcer.top/posts/be1c.html&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="fa-brands fa-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="fas fa-link"></i></div></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"><span class="tags-punctuation"><i class="fas fa-tag"></i></span> 软件测试<span class="tagsPageCount">9</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://npm.elemecdn.com/ushio-api-img-moe@5.0.24/img_240_1920x1032_72_null_normal.jpg" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload='this.media="all"'><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="post-copyright"><i class="fa-solid fa-copyright"></i><div class="post-copyright__author"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.hcer.top/posts/be1c.html">原创</a><a class="post-copyright-title"><span>Selenium 基本用法</span></a></div><div class="post-copyright-info-box"><span class="post-copyright-meta">文章作者:</span><span class="post-copyright-info"></span> <a class="link" href="https://www.hcer.top">冰梦</a></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接:</span> <span class="post-copyright-info"><a class="link" href="https://www.hcer.top/posts/be1c.html">https://www.hcer.top/posts/be1c.html</a></span><span class="copy-button" onclick='rm.copyPageUrl("https://www.hcer.top/posts/be1c.html")'><i class="fas fa-copy"></i></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明:</span> <span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.hcer.top" target="_blank">冰刻无痕</a>！</span></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/d208.html"><img class="cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.6/img_68_2560x1440_72_null_normal.jpg" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">测试代码层</div></div></a></div><div class="next-post pull-right"><a href="/posts/3d6e.html"><img class="next-cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.28/img_284_2560x1440_72_null_normal.jpg" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">git 常用指令</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw" style="font-size:1.5rem;margin-right:4px"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/f8bc.html" title="JMeter和java8安装"><img class="cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.68/img_687_1920x1080_72_null_normal.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-12</div><div class="title">JMeter和java8安装</div></div></a></div><div><a href="/posts/573c.html" title="Pytest介绍和教程"><img class="cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.48/img_484_1920x1080_72_null_normal.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-05</div><div class="title">Pytest介绍和教程</div></div></a></div><div><a href="/posts/4f3a.html" title="Web 自动化框架封装"><img class="cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.84/img_843_1920x980_96_null_normal.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-14</div><div class="title">Web 自动化框架封装</div></div></a></div><div><a href="/posts/cc2a.html" title="allure安装配置和简单使用"><img class="cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.30/img_302_1920x1080_72_null_normal.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-05</div><div class="title">allure安装配置和简单使用</div></div></a></div><div><a href="/posts/ec43.html" title="web 自动化实战基础"><img class="cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://gcore.jsdelivr.net/npm/ushio-api-img-moe@5.0.84/img_843_1920x980_96_null_normal.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-13</div><div class="title">web 自动化实战基础</div></div></a></div><div><a href="/posts/3eeb.html" title="学习笔记"><img class="cover" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://img.xjh.me/img/63788867_p0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">学习笔记</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments"></i> <span>评论</span></div><div class="comment-randomInfo"><a onclick="btf.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left:4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info__sayhi" id="author-info__sayhi"></div><div class="author-info-top"><div class="card-info-avatar"><a class="avatar-img" href="/about"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1580777927&amp;s=5" alt="avatar"></a></div></div><h1 class="author-info__name">冰梦</h1><div class="author-info__description"><div style="line-height:1.38;margin:.6rem 0;text-align:center;font-family:fangsong">到不了的都叫远方，回不去的都叫故乡。</div></div><div class="banner-button-group"><a class="banner-button" onclick="pjax.loadUrl(&quot;/about/&quot;)"><span class="banner-button-text">了解更多</span><i class="fas fa-arrow-circle-right"></i></a></div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/icemyst" target="_blank" title="Github"><i class="fab fa-github faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="mailto:icemyst@qq.com" target="_blank" title="Email"><i class="fas fa-envelope faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="https://api.vvhan.com/api/qqCard?qq=1580777927" target="_blank" title="QQ"><i class="fab fa-qq faa-tada"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn btf-shake"></i><span>公告</span></div><div class="announcement_content"><div><a target="_blank" rel="noopener" href="https://hcer.top" style="border-bottom:none;background:0 0"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://jsd.onmicrosoft.cn/gh/eudav/bingm-static/img/hcer.webp" alt="https://hcer.top" style="border-radius:0"></a></div><b>GitHub站点：</b><a target="_blank" rel="noopener" href="https://icemyst.github.io">https://icemyst.github.io</a><div>CDN赞助者：@xinpro(鸣谢)</div><div>赞助者博客：<a target="_blank" rel="noopener" href="https://xinpro.cn">https://xinpro.cn</a></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2"><span class="toc-number">2.</span> <span class="toc-text">访问页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%A7%E5%B0%8F"><span class="toc-number">3.</span> <span class="toc-text">设置浏览器大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">刷新页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80"><span class="toc-number">5.</span> <span class="toc-text">前进后退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7"><span class="toc-number">6.</span> <span class="toc-text">获取页面基础属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D"><span class="toc-number">7.</span> <span class="toc-text">页面元素定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#id%E5%AE%9A%E4%BD%8D"><span class="toc-number">8.</span> <span class="toc-text">id定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-%E5%AE%9A%E4%BD%8D"><span class="toc-number">9.</span> <span class="toc-text">class 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tag-%E5%AE%9A%E4%BD%8D"><span class="toc-number">10.</span> <span class="toc-text">tag 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#link-%E5%AE%9A%E4%BD%8D"><span class="toc-number">11.</span> <span class="toc-text">link 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#partial-%E5%AE%9A%E4%BD%8D"><span class="toc-number">12.</span> <span class="toc-text">partial 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xpath-%E5%AE%9A%E4%BD%8D"><span class="toc-number">13.</span> <span class="toc-text">xpath 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css-%E5%AE%9A%E4%BD%8D"><span class="toc-number">14.</span> <span class="toc-text">css 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find-element%E7%9A%84By%E5%AE%9A%E4%BD%8D"><span class="toc-number">15.</span> <span class="toc-text">find_element的By定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="toc-number">16.</span> <span class="toc-text">多个元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="toc-number">17.</span> <span class="toc-text">获取页面元素属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96logo%E7%9A%84%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80"><span class="toc-number">17.1.</span> <span class="toc-text">获取logo的图片地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E6%9C%AC"><span class="toc-number">17.2.</span> <span class="toc-text">获取文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%85%B6%E4%BB%96%E5%B1%9E%E6%80%A7"><span class="toc-number">17.3.</span> <span class="toc-text">获取其他属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E4%BA%A4%E4%BA%92%E6%93%8D%E4%BD%9C"><span class="toc-number">17.4.</span> <span class="toc-text">页面交互操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%96%87%E6%9C%AC"><span class="toc-number">17.5.</span> <span class="toc-text">输入文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%87%BB"><span class="toc-number">17.6.</span> <span class="toc-text">点击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%96%87%E6%9C%AC"><span class="toc-number">17.7.</span> <span class="toc-text">清除文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E8%BD%A6%E7%A1%AE%E8%AE%A4"><span class="toc-number">17.8.</span> <span class="toc-text">回车确认</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E9%80%89"><span class="toc-number">17.9.</span> <span class="toc-text">单选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%80%89"><span class="toc-number">17.10.</span> <span class="toc-text">多选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E6%8B%89%E6%A1%86"><span class="toc-number">17.11.</span> <span class="toc-text">下拉框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%AA%97%E5%8F%A3%E5%88%87%E6%8D%A2"><span class="toc-number">17.12.</span> <span class="toc-text">多窗口切换</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/c987.html" title="CloudFlare IP优选及域名优选"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://npm.elemecdn.com/ushio-api-img-moe@5.0.24/img_240_1920x1032_72_null_normal.jpg" alt="CloudFlare IP优选及域名优选"></a><div class="content"><a class="title" href="/posts/c987.html" title="CloudFlare IP优选及域名优选">CloudFlare IP优选及域名优选</a><time datetime="2024-03-14T13:20:06.000Z" title="发表于 2024-03-14 21:20:06">2024-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cd65.html" title="使用cloudflare的Worker搭建vless节点"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://api-storage.4ce.cn/v1/eacd05b3dae30210441a0406011c3fef.jpg" alt="使用cloudflare的Worker搭建vless节点"></a><div class="content"><a class="title" href="/posts/cd65.html" title="使用cloudflare的Worker搭建vless节点">使用cloudflare的Worker搭建vless节点</a><time datetime="2024-03-13T16:36:53.000Z" title="发表于 2024-03-14 00:36:53">2024-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b8bd.html" title="IDM 激活（脚本）"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://image.baidu.com/search/down?url=https://tvax3.sinaimg.cn//large/0072Vf1pgy1foxk3iad2ij31kw0w0x0a.jpg" alt="IDM 激活（脚本）"></a><div class="content"><a class="title" href="/posts/b8bd.html" title="IDM 激活（脚本）">IDM 激活（脚本）</a><time datetime="2024-03-13T11:16:38.000Z" title="发表于 2024-03-13 19:16:38">2024-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/53c1.html" title="esd打包为ISO那些事（补充）"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://api-storage.4ce.cn/v1/b874eb481460fcceb66543e8d1508928.jpg" alt="esd打包为ISO那些事（补充）"></a><div class="content"><a class="title" href="/posts/53c1.html" title="esd打包为ISO那些事（补充）">esd打包为ISO那些事（补充）</a><time datetime="2024-03-11T14:48:16.000Z" title="发表于 2024-03-11 22:48:16">2024-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/132b.html" title="制作ISO系统镜像文件"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://npm.elemecdn.com/ushio-api-img-moe@5.0.24/img_249_2081x1420_96_null_normal.jpg" alt="制作ISO系统镜像文件"></a><div class="content"><a class="title" href="/posts/132b.html" title="制作ISO系统镜像文件">制作ISO系统镜像文件</a><time datetime="2024-03-06T12:24:40.000Z" title="发表于 2024-03-06 20:24:40">2024-03-06</time></div></div></div></div></div></div></main><footer id="footer" style="background:0 0"><div id="footer-wrap"><div class="copyright"><span>©2020 - 2024</span><svg style="width:1.25em;height:1.25em" aria-hidden="true"><use xlink:href="#icon-Butterfly"></use></svg><span>冰梦</span></div><div id="workboard"><img class="workSituationImg boardsign" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://jsd.onmicrosoft.cn/gh/eudav/bingm-static/img/icon/冰梦-上班摸鱼中-6adea8.svg" alt="一个还在学习的萌新" title="一个还在学习的萌新"><div id="runtimeTextTip" style="margin-top:10px;display:flex;justify-content:center;align-items:center"></div></div><div class="footer_custom_text"><div id="fps"></div></div><div class="wordcount"></div><span>冰梦已经写了 199.6k 字，</span><span>好像写完一本 亚米契斯 的 《爱的教育》 了啊</span></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1580777927&amp;s=5" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">164</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child" style="left:-79px"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i> <span>隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-cubes faa-tada"></i> <span>分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i> <span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>统计</span></a><ul class="menus_item_child" style="left:-175px"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="fas fa-link faa-tada"></i> <span>友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="fa-brands fa-artstation faa-tada"></i> <span>朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/charts/"><i class="fas fa-chart-line faa-tada"></i> <span>统计表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i> <span>留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/todolist/"><i class="fa-fw fas fa-table-list faa-tada"></i> <span>清单</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child" style="left:-127px"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=7657374410&amp;server=tencent"><i class="fa-fw fas fa-music faa-tada"></i> <span>音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-fw fa-brands fa-bilibili faa-tada"></i> <span>追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="fa-fw fas fa-images faa-tada"></i> <span>相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/collect/"><i class="fa-fw fas fa-box faa-tada"></i> <span>藏宝阁</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child" style="left:-79px"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-dragon faa-tada"></i> <span>关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="fas fa-lightbulb faa-tada"></i> <span>闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="fas fa-shoe-prints faa-tada"></i> <span>随便逛逛</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-message"></i></a><a id="switch-commentBarrage" href="javascript:btf.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fas fa-image"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="btf.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2619366284" server="netease" type="playlist" mutex="true" preload="none" theme="var(--icemyst-main)" data-lrctype="0" order="random"></meting-js></div><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/img/wechat.webp" target="_blank"><img class="post-qr-code-img" alt="微信" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="/img/wechat.webp"></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.webp" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.png&quot;" data-lazy-src="/img/alipay.webp"></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><button class="close-btn" onclick="btf.hideConsole()" href="javascript:void(0);"><i class="fas fa-circle-xmark" style="font-size:35px"></i></button><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="btf.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"><span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="btf.hideConsole()"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/123%E7%BD%91%E7%9B%98/" style="font-size:1ren;color:#6fb790">123网盘<sup>2</sup></a><a href="/tags/Android/" style="font-size:1ren;color:#1e8751">Android<sup>8</sup></a><a href="/tags/CDN/" style="font-size:1ren;color:#3b1a7d">CDN<sup>2</sup></a><a href="/tags/Cloudflare/" style="font-size:1ren;color:#7313c4">Cloudflare<sup>3</sup></a><a href="/tags/Git/" style="font-size:1ren;color:#888b7c">Git<sup>1</sup></a><a href="/tags/GitHub/" style="font-size:1ren;color:#b94ca5">GitHub<sup>5</sup></a><a href="/tags/Gmail/" style="font-size:1ren;color:#599dc2">Gmail<sup>1</sup></a><a href="/tags/Java/" style="font-size:1ren;color:#a41460">Java<sup>1</sup></a><a href="/tags/MySQL/" style="font-size:1ren;color:#7cc313">MySQL<sup>2</sup></a><a href="/tags/NovelAI/" style="font-size:1ren;color:#b94602">NovelAI<sup>4</sup></a><a href="/tags/OneDrive/" style="font-size:1ren;color:#19669e">OneDrive<sup>7</sup></a><a href="/tags/PE%E5%B7%A5%E5%85%B7/" style="font-size:1ren;color:#a45f31">PE工具<sup>1</sup></a><a href="/tags/SEO/" style="font-size:1ren;color:#3f0a6d">SEO<sup>2</sup></a><a href="/tags/Twikoo/" style="font-size:1ren;color:#1f192b">Twikoo<sup>3</sup></a><a href="/tags/Windows/" style="font-size:1ren;color:#772f73">Windows<sup>33</sup></a><a href="/tags/WordPress/" style="font-size:1ren;color:#21525e">WordPress<sup>1</sup></a><a href="/tags/hexo/" style="font-size:1ren;color:#be312c">hexo<sup>41</sup></a><a href="/tags/idm%E6%BF%80%E6%B4%BB/" style="font-size:1ren;color:#003196">idm激活<sup>1</sup></a><a href="/tags/npm/" style="font-size:1ren;color:#99937b">npm<sup>3</sup></a><a href="/tags/office/" style="font-size:1ren;color:#689d92">office<sup>3</sup></a><a href="/tags/python/" style="font-size:1ren;color:#15270b">python<sup>1</sup></a><a href="/tags/shields-io%E5%BE%BD%E6%A0%87/" style="font-size:1ren;color:#842f51">shields.io徽标<sup>1</sup></a><a href="/tags/ssl%E8%AF%81%E4%B9%A6/" style="font-size:1ren;color:#ad8e3b">ssl证书<sup>2</sup></a><a href="/tags/vscode%E6%89%A9%E5%B1%95/" style="font-size:1ren;color:#4c40aa">vscode扩展<sup>1</sup></a><a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size:1ren;color:#c337bb">web前端<sup>20</sup></a><a href="/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%BE%8E%E5%8C%96/" style="font-size:1ren;color:#135b6e">二维码美化<sup>1</sup></a><a href="/tags/%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1/" style="font-size:1ren;color:#6c8f77">企业邮箱<sup>1</sup></a><a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size:1ren;color:#0a16a5">图像处理<sup>1</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size:1ren;color:#5a6c7e">图床<sup>7</sup></a><a href="/tags/%E5%9B%BE%E7%A7%8D/" style="font-size:1ren;color:#872a04">图种<sup>1</sup></a><a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size:1ren;color:#9f2b03">备忘录<sup>1</sup></a><a href="/tags/%E5%AE%9D%E5%A1%94/" style="font-size:1ren;color:#3103c6">宝塔<sup>5</sup></a><a href="/tags/%E5%BE%AE%E8%BD%AF/" style="font-size:1ren;color:#50a01c">微软<sup>4</sup></a><a href="/tags/%E6%88%AA%E5%9B%BE%E5%B7%A5%E5%85%B7/" style="font-size:1ren;color:#69a13c">截图工具<sup>1</sup></a><a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" style="font-size:1ren;color:#616b01">科学上网<sup>8</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" style="font-size:1ren;color:#9c62ae">软件测试<sup>9</sup></a><a href="/tags/%E9%95%9C%E5%83%8F%E5%B7%A5%E5%85%B7/" style="font-size:1ren;color:#a94985">镜像工具<sup>1</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/" style="font-size:1ren;color:#1bae96">阿里云盘<sup>2</sup></a><a href="/tags/%E9%9A%8F%E6%9C%BA%E5%9B%BEAPI/" style="font-size:1ren;color:#5f7006">随机图API<sup>1</sup></a></div></div><hr></div></div><div class="console-card history" onclick="btf.hideConsole()"><div class="item-headline"><i class="fas fa-box-archive"></i><span>文章</span></div></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="btf.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="fas fa-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="btf.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="fas fa-arrows-alt-h"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="btf.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="fas fa-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="btf.musicToggle()" title="音乐开关"><a class="music-switch"><i class="fas fa-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="btf.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="fas fa-keyboard"></i></a></div></div><div class="console-mask" onclick="btf.hideConsole()" href="javascript:void(0);"></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-xmark"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fas fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fas fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fas fa-rotate-right" style="font-size:1rem"></i></div><div class="rightMenu-item" id="menu-top"><i class="fas fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="fa-regular fa-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="fa fa-copy"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="fas fa-message"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="fas fa-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="fas fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="fa-regular fa-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="fas fa-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="fas fa-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="fas fa-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="fas fa-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="fas fa-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="fas fa-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="fas fa-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/7657374410&quot;, &quot;_blank&quot;);" style="display:none"><i class="fas fa-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="fas fa-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="fas fa-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="fas fa-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="fas fa-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="fas fa-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="fas fa-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="fas fa-adjust"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="fas fa-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var meting_api="https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r"</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+ var HoldLog = console.log;
+ console.log = function () {};
+ let now1 = new Date();
+ queueMicrotask(() => {
+   const Log = function () {
+     HoldLog.apply(console, arguments);
+   }; //在恢复前输出日志
+   const grt = new Date("04/01/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+   now1.setTime(now1.getTime() + 250);
+   const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+   const dnum = Math.floor(days);
+   const ascll = [
+     `欢迎访问冰梦の博客!`,
+     `到不了的都叫远方，回不去的都叫故乡。`,
+   `
+     
+ ██╗ ██████╗███████╗███╗   ███╗██╗   ██╗███████╗████████╗
+ ██║██╔════╝██╔════╝████╗ ████║╚██╗ ██╔╝██╔════╝╚══██╔══╝
+ ██║██║     █████╗  ██╔████╔██║ ╚████╔╝ ███████╗   ██║   
+ ██║██║     ██╔══╝  ██║╚██╔╝██║  ╚██╔╝  ╚════██║   ██║   
+ ██║╚██████╗███████╗██║ ╚═╝ ██║   ██║   ███████║   ██║   
+ ╚═╝ ╚═════╝╚══════╝╚═╝     ╚═╝   ╚═╝   ╚══════╝   ╚═╝   
+     
+   `,
+`Github: https://github.com/icemyst`,
+     "已上线",
+     dnum,
+     "天",
+     `©2020 By 冰梦`,
+   ];
+   const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【观测者】。`, `Photo captured: `, `☯`];
+   setTimeout(
+     Log.bind(
+       console,
+       `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}\n\n%c ${ascll[4]}%c ${ascll[5]}%c ${ascll[6]}\n\n ${ascll[7]}`,
+       "color:#3b70fc",
+       "",
+       "color:#3b70fc",
+       "color:#3b70fc",
+       "",
+       "color:#3b70fc",
+       ""
+     )
+   );
+   setTimeout(
+     Log.bind(
+       console,
+       `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+       "color:white; background-color:#4fd953",
+       "",
+       "",
+       'background:url("https://jsd.onmicrosoft.cn/gh/eudav/bingm-static/img/kbn.webp") no-repeat;font-size:450%'
+     )
+   );
+
+   setTimeout(Log.bind(console, "%c WELCOME %c 你好，访问者.", "color:white; background-color:#4f90d9", ""));
+
+   setTimeout(
+     console.warn.bind(
+       console,
+       "%c ⚡ Powered by 冰梦 %c 你正在访问 冰梦 的博客.",
+       "color:white; background-color:#f0ad4e",
+       ""
+     )
+   );
+
+   setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+   setTimeout(
+     console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+   );
+ });</script><script async src="/custom/random.js"></script><script async>(function () {
+  var grt = new Date("04/01/2022 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"冰梦-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `<div style="box-shadow: 0 0 5px rgba(28,69,218,.71);animation: flashlight 1s linear infinite alternate;width:fit-content;color:#fff;padding: 0 10px;border-radius: 10px;background-color: rgba(0, 0, 0, 0.7);"><font style=color:#23a6d5>&nbsp本站已苟活&nbsp</font>${dnum} <font style=color:#aff4df>&nbsp天&nbsp</font><span id='runtime'> ${hnum} <font style=color:#f391a9> &nbsp小时&nbsp</font> ${mnum} <font style=color:#fdb933>&nbsp分&nbsp</font> ${snum} <font style=color:#a3cf62>&nbsp秒</font> </span></div>`;
+    } else {
+      // 如果是下班时间，插入"冰梦-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      img.src = "https://jsd.onmicrosoft.cn/gh/eudav/bingm-static/img/icon/冰梦-下班休息中-6adea8.svg";
+      img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+      img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+      currentTimeHtml = `<div style="box-shadow: 0 0 5px rgba(28,69,218,.71);animation: flashlight 1s linear infinite alternate;width:fit-content;color:#fff;padding: 0 10px;border-radius: 10px;background-color: rgba(0, 0, 0, 0.7);"><font style=color:#23a6d5>&nbsp本站已苟活&nbsp</font>${dnum} <font style=color:#aff4df>&nbsp天&nbsp</font><span id='runtime'> ${hnum} <font style=color:#f391a9> &nbsp小时&nbsp</font> ${mnum} <font style=color:#fdb933>&nbsp分&nbsp</font> ${snum} <font style=color:#a3cf62>&nbsp秒</font> </span></div>`;
+
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="https://cdn.cbd.int/algoliasearch@4.22.0/dist/algoliasearch-lite.umd.js"></script><script src="https://cdn.cbd.int/instantsearch.js@4.63.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.abeginner.top/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.31/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.abeginner.top/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.abeginner.top/.netlify/functions/twikoo',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.31/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax="" src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail="icemyst@mail.ru"</script><script>//动态标题
+let leaveTitle = 'w(ﾟДﾟ)w 不要走！再看看嘛！';
+let backTitle = '♪(^∇^*)欢迎肥来！';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script data-pjax="true">if (document.querySelector(".comment-barrage")){
+  var commentBarrageConfig = {
+    maxBarrage: 1,
+    barrageTime: 4000,
+    twikooUrl: "https://twikoo.abeginner.top/.netlify/functions/twikoo",
+    accessToken: "350a81936d614be387169bbf2a58a552",
+    mailMd5: "d338f432ad0bf2f61e5fe4ad1642725d",
+    pageUrl: window.location.pathname,
+    barrageTimer: [],
+    barrageList: [],
+    barrageIndex: 0,
+    dom: document.querySelector(".comment-barrage"),
+  };
+  var commentInterval = null;
+  var hoverOnCommentBarrage = false;
+  
+  document.querySelector(".comment-barrage").addEventListener("mouseenter", function() {
+    hoverOnCommentBarrage = true;
+  });
+  document.querySelector(".comment-barrage").addEventListener("mouseleave", function() {
+    hoverOnCommentBarrage = false;
+  });
+
+  function initCommentBarrage() {
+    if (!commentBarrageConfig.dom) return;
+
+    var data = JSON.stringify({
+      event: "COMMENT_GET",
+      "commentBarrageConfig.accessToken": commentBarrageConfig.accessToken,
+      url: commentBarrageConfig.pageUrl,
+    });
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4 && this.responseText) {
+        commentBarrageConfig.barrageList = commentLinkFilter(JSON.parse(this.responseText).data);
+        commentBarrageConfig.dom.innerHTML = "";
+      }
+    });
+    xhr.open("POST", commentBarrageConfig.twikooUrl);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
+
+    clearInterval(commentInterval);
+    commentInterval = null;
+
+    commentInterval = setInterval(() => {
+      if (commentBarrageConfig.barrageList.length && !hoverOnCommentBarrage) {
+        popCommentBarrage(commentBarrageConfig.barrageList[commentBarrageConfig.barrageIndex]);
+        commentBarrageConfig.barrageIndex += 1;
+        commentBarrageConfig.barrageIndex %= commentBarrageConfig.barrageList.length;
+      }
+      if (
+        commentBarrageConfig.barrageTimer.length >
+          (commentBarrageConfig.barrageList.length > commentBarrageConfig.maxBarrage
+            ? commentBarrageConfig.maxBarrage
+            : commentBarrageConfig.barrageList.length) &&
+        !hoverOnCommentBarrage
+      ) {
+        removeCommentBarrage(commentBarrageConfig.barrageTimer.shift());
+      }
+    }, commentBarrageConfig.barrageTime);
+  }
+
+  function commentLinkFilter(data) {
+    data.sort((a, b) => {
+      return a.created - b.created;
+    });
+    let newData = [];
+    data.forEach(item => {
+      newData.push(...getCommentReplies(item));
+    });
+    return newData;
+  }
+
+  function getCommentReplies(item) {
+    if (item.replies) {
+      let replies = [item];
+      item.replies.forEach(item => {
+        replies.push(...getCommentReplies(item));
+      });
+      return replies;
+    } else {
+      return [];
+    }
+  }
+
+  function popCommentBarrage(data) {
+    let barrage = document.createElement("div");
+    barrage.className = "comment-barrage-item";
+    barrage.innerHTML = `
+        <div class="barrageHead">
+          <a class="barrageTitle ${
+            data.mailMd5 === commentBarrageConfig.mailMd5 ? "barrageBloggerTitle" : ""
+          }" href="javascript:btf.scrollTo('#post-comment')"">
+            ${data.mailMd5 === commentBarrageConfig.mailMd5 ? "博主" : "热评"}
+          </a>
+          <div class="barrageNick">${data.nick}</div>
+          <img class="nolazyload barrageAvatar" src="https://cravatar.cn/avatar/${data.mailMd5}"/>
+          <a class="comment-barrage-close" href="javascript:btf.switchCommentBarrage()"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+        <a class="barrageContent" href="#${data.id}">
+          <object>${data.comment}</object>
+        </a>
+      `;
+    commentBarrageConfig.barrageTimer.push(barrage);
+    commentBarrageConfig.dom.append(barrage);
+  }
+
+  function removeCommentBarrage(barrage) {
+    barrage.className = "comment-barrage-item out";
+
+    setTimeout(() => {
+      if (commentBarrageConfig.dom && commentBarrageConfig.dom.contains(barrage)) {
+        commentBarrageConfig.dom.removeChild(barrage);
+      }
+      }, 1000);
+    }
+
+    // 自动隐藏
+    const commentEntryCallback = (entries) => {
+      const commentBarrage = document.querySelector(".comment-barrage");
+      const postComment = document.getElementById("post-comment");
+
+      entries.forEach(entry => {
+        if (postComment && commentBarrage && document.body.clientWidth > 768) {
+          commentBarrage.style.bottom = entry.isIntersecting ? `-${commentBarrageConfig.maxBarrage * 200}px` : "0";
+        }
+      });
+    };
+    // 创建IntersectionObserver实例
+    const observer = new IntersectionObserver(commentEntryCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0
+    });
+    // 监视目标元素
+    const postCommentTarget = document.getElementById("post-comment");
+    if (postCommentTarget) {
+      observer.observe(postCommentTarget);
+    }
+
+    initCommentBarrage();
+
+    if (localStorage.getItem("commentBarrageSwitch") !== "false") {
+      document.querySelector(".comment-barrage").style.display = "flex";
+      document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+    } else {
+      document.querySelector(".comment-barrage").style.display = "none";
+      document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+    }
+
+    document.addEventListener("pjax:send", function () {
+      clearInterval(commentInterval);
+    });
+
+  }</script><script async data-pjax="" src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  btf.snackbarShow("正在复制中，请稍后", false, 1000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      btf.snackbarShow("复制成功！图片已添加到剪贴板，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "1000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  btf.snackbarShow("复制链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  btf.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  btf.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    btf.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", btf.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", btf.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", () => {
+    rm.copyPageUrl();
+  });
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    btf.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    btf.downloadImage(domImgSrc, "btf");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", btf.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", btf.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", btf.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(btf.musicGetName());
+    btf.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax="">var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | 冰刻无痕")[0];
+btf.initIndexEssay();
+btf.changeTimeInEssay();
+btf.removeBodyPaceClass();
+btf.qrcodeCreate();
+btf.changeTimeInAlbumDetail();
+btf.reflashEssayWaterFall();
+btf.sayhi();
+btf.stopImgRightDrag();
+btf.addNavBackgroundInit();
+btf.setValueToBodyType();
+btf.catalogActive();
+btf.tagsPageActive();
+btf.categoriesBarActive();
+btf.topCategoriesBarScroll();
+btf.switchRightClickMenuHotReview();
+btf.getCustomPlayList();
+btf.addEventListenerConsoleMusicList(false);
+setTimeout(() => {if (typeof addFriendLinksInFooter === "function") {addFriendLinksInFooter();}}, 200)</script><script>const LoadScript = (url, charset = "UTF-8", crossorigin, id) => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    if (id) {
+      script.setAttribute("id", id);
+    }
+    if (charset) {
+      script.setAttribute("charset", charset);
+    }
+    if (crossorigin) {
+      script.setAttribute("crossorigin", crossorigin);
+    }
+    script.onerror = reject;
+    script.onload = script.onreadystatechange = function() {
+      const loadState = this.readyState;
+      if (loadState && loadState !== 'loaded' && loadState !== 'complete') return;
+      script.onload = script.onreadystatechange = null;
+      resolve();
+    };
+    document.head.appendChild(script);
+  });
+};
+
+const scriptUrls = [
+  { url: 'https://sdk.51.la/js-sdk-pro.min.js', charset: 'UTF-8',crossorigin:false, id: 'LA_COLLECT' },
+  { url: 'https://sdk.51.la/perf/js-sdk-perf.min.js', crossorigin: 'anonymous' }
+];
+
+Promise.all(scriptUrls.map(({ url, charset, crossorigin, id }) => LoadScript(url, charset, crossorigin, id)))
+  .then(() => {
+    LA.init({ id: "JxSuAna3ua5vGXEw", ck: "JxSuAna3ua5vGXEw" });
+    new LingQue.Monitor().init({ id: "JxSuAna3ua5vGXEw", sendSuspicious: true });
+  })
+  .catch(error => {
+    console.error('本地无法加载51a统计，线上即可加载:', error);
+  });</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script src="/js/custom/dynamic-background.js"></script><script defer src="/js/custom/memos/waterfall.min.js"></script><script defer src="/js/custom/memos/imgStatus.min.js"></script><script defer src="/js/custom/memos/lately.min.js"></script><script defer src="/js/custom/memos/memos.js?v1"></script><script src="/js/custom/easy-Danmaku.js"></script><script src="/js/custom/essay.js"></script><script async src="//at.alicdn.com/t/font_2032782_8ns648avijk.js"></script><script async src="https://at.alicdn.com/t/c/font_3855261_r5lzgvwjjsm.js"></script><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><script defer data-pjax="" src="https://npm.elemecdn.com/blog12.8@1.0.1/categoryBar.js"></script><script src="https://jsd.onmicrosoft.cn/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script src="/js/custom/lunar.js"></script><script src="/js/custom/day.js"></script><script src="https://jsd.onmicrosoft.cn/npm/leancloud-storage@4.13.4/dist/av-min.js"></script><script src="https://jsd.onmicrosoft.cn/gh/nextapps-de/winbox/dist/winbox.bundle.min.js"></script><script data-pjax="" src="/js/custom/handoff.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?ef832811ada62c5e8a9972ba80c825c0";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><link rel="stylesheet" href="https://cdn.cbd.int/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload='this.media="all"'><script src="https://cdn.cbd.int/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>
